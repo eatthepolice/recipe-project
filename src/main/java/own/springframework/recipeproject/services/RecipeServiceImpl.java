@@ -1,10 +1,12 @@
 package own.springframework.recipeproject.services;
 
 import org.springframework.stereotype.Service;
+import own.springframework.recipeproject.domain.Category;
 import own.springframework.recipeproject.domain.Recipe;
 import own.springframework.recipeproject.repositories.RecipeRepository;
 
 import java.util.HashSet;
+import java.util.Optional;
 import java.util.Set;
 @Service
 public class RecipeServiceImpl implements RecipeService {
@@ -21,4 +23,23 @@ public class RecipeServiceImpl implements RecipeService {
         recipeRepository.findAll().iterator().forEachRemaining(recipeSet::add);
         return recipeSet;
     }
+
+    @Override
+    public Recipe findById(Long l) {
+
+        Optional<Recipe> recipeOptional = recipeRepository.findById(l);
+
+        if (!recipeOptional.isPresent()) {
+            throw new RuntimeException("Recipe not found!");
+        }
+        return recipeOptional.get();
+    }
+
+/*    @Override
+    public Set<Category> getCategory() {
+        Set<Category> categorySet = new HashSet<>();
+        recipeRepository
+    }*/
+
+
 }
