@@ -20,16 +20,14 @@ public class Recipe {
 
     @Lob
     private String directions;
-    //
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "recipe")
-    private Set<Ingredient> ingredients = new HashSet<>();
     @Lob
     private Byte[] image;
-    @OneToOne(cascade = CascadeType.ALL)
-    private Notes notes;
     @Enumerated(value = EnumType.STRING)
     private Difficulty difficulty;
-
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "recipe")
+    private Set<Ingredient> ingredients = new HashSet<>();
+    @OneToOne(cascade = CascadeType.ALL)
+    private Notes notes;
     @ManyToMany
     @JoinTable(name = "recipe_category",
             joinColumns = @JoinColumn(name = "recipe_id"),

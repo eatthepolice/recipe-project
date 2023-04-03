@@ -8,7 +8,9 @@ public class Ingredient {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
     private String description;
+
     private BigDecimal amount;
     @OneToOne
     private UnitOfMeasure unit;
@@ -22,13 +24,6 @@ public class Ingredient {
         this.description = description;
         this.amount = amount;
         this.unit = uom;
-    }
-
-    public Ingredient(String description, BigDecimal amount, UnitOfMeasure uom, Recipe recipe) {
-        this.description = description;
-        this.amount = amount;
-        this.unit = uom;
-        this.recipe = recipe;
     }
 
     public Long getId() {

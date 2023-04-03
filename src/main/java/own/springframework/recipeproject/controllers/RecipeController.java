@@ -4,7 +4,6 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
-import own.springframework.recipeproject.repositories.RecipeRepository;
 import own.springframework.recipeproject.services.RecipeService;
 
 @Controller
@@ -24,7 +23,4 @@ public class RecipeController {
         return "recipe/show";
     }
 
-/*    public String getCategories(Model model) {
-        model.addAttribute("categories", recipeService.getCategory());
-    }*/
 }

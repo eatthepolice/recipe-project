@@ -1,7 +1,6 @@
 package own.springframework.recipeproject.services;
 
 import org.springframework.stereotype.Service;
-import own.springframework.recipeproject.domain.Category;
 import own.springframework.recipeproject.domain.Recipe;
 import own.springframework.recipeproject.repositories.RecipeRepository;
 
@@ -34,12 +33,6 @@ public class RecipeServiceImpl implements RecipeService {
         }
         return recipeOptional.get();
     }
-
-/*    @Override
-    public Set<Category> getCategory() {
-        Set<Category> categorySet = new HashSet<>();
-        recipeRepository
-    }*/
 
 
 }
